@@ -1,0 +1,242 @@
+html, body {
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+}
+
+* {
+  box-sizing: border-box;
+  outline: none;
+  transition-duration: 100ms;
+  transition-timing-function: linear;
+  transition-property: background-color, border;
+}
+
+body {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-start;
+  justify-items: flex-start;
+  width: 100vw;
+  vertical-align: top;
+  align-content: flex-start;
+  font-family: sans-serif;
+  background: rgb(232, 232, 232);
+  padding: 2px;
+}
+
+/** component **/
+.currency-offers-component {
+  border: 1px solid rgb(158, 158, 158);
+  width: calc(100% - 2px);
+  background: rgba(240, 240, 241, 1);
+  min-height: 100px;
+  margin-right: 2px;
+  margin-bottom: 2px;
+}
+
+.currency-offers-component.plus .profit-arrow {
+  border-bottom: 16px solid green;
+}
+
+.currency-offers-component.minus .profit-arrow {
+  border-top: 16px solid red;
+}
+
+@media (min-width: 640px) {
+  .currency-offers-component {
+    width: calc(50% - 2px);
+  }
+}
+
+@media (min-width: 1000px) {
+  .currency-offers-component {
+    width: calc(25% - 2px);
+  }
+}
+
+.instrument-name {
+  text-align: center;
+  padding: 2px 0;
+  background: rgba(92, 92, 93, 1);
+  color: white;
+}
+
+.offers {
+  padding: 4px 12px;
+  width: 100%;
+  display: flex;
+  flex-wrap: nowrap;
+  position: relative;
+}
+
+.profit-arrow {
+  height: 0;
+  width: 0;
+  border-left: 5px transparent solid;
+  border-right: 5px transparent solid;
+
+  position: absolute;
+  left: calc(50% - 5px);
+}
+
+/** component__offer **/
+.single-offer {
+  /*flex-grow: 1;*/
+  width: 50%;
+  position: relative;
+  height: 44px;
+}
+
+.single-offer .data-container {
+  border: 1px solid rgb(209, 210, 210);
+  position: relative;
+  height: 100%;
+  padding: 2px;
+  width: 100%;
+  border-radius: 2px;
+  background: white;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+}
+
+.single-offer:hover .data-container, .single-offer:hover .arrow-tip {
+  cursor: pointer;
+}
+
+.single-offer:hover .data-container {
+  padding-top: 1px;
+  padding-bottom: 1px;
+  color: white;
+}
+
+.single-offer .offer-name {
+  position: relative;
+  flex-grow: 1;
+  z-index: 1;
+}
+
+.price-container {
+  position: relative;
+  z-index: 1;
+}
+
+.single-offer .arrow-tip {
+  position: absolute;
+  background: white;
+  height: 32px;
+  width: 32px;
+  transform: rotateZ(45deg);
+  /*border: inherit;*/
+  border: 1px solid rgb(209, 210, 210);
+  border-radius: 3px;
+  z-index: 0;
+
+  top: 6px;
+}
+
+.single-offer.buy {
+  text-align: right;
+  margin-left: 10%;
+  color: green;
+}
+
+.single-offer.buy .data-container {
+  border-left: none;
+  border-top-left-radius: 3px;
+  border-bottom-left-radius: 3px;
+}
+
+.single-offer.buy:hover .data-container {
+  border-top-left-radius: 4px;
+  border-bottom-left-radius: 4px;
+  padding-right: 1px;
+}
+
+.single-offer.buy:hover .data-container, .single-offer.buy:hover .arrow-tip {
+  background: rgb(127, 209, 59);
+}
+
+.single-offer.sell:hover .data-container, .single-offer.sell:hover .arrow-tip {
+  background: red;
+}
+
+.single-offer.buy .arrow-tip {
+  left: -15px;
+  border-top: none;
+  border-right: none;
+  border-bottom-left-radius: 8px;
+}
+
+.single-offer.sell {
+  margin-right: 10%;
+  color: red;
+}
+
+.single-offer.sell .data-container {
+  border-right: none;
+  border-top-right-radius: 3px;
+  border-bottom-right-radius: 3px;
+}
+
+.single-offer.sell:hover .data-container {
+  border-top-right-radius: 4px;
+  border-bottom-right-radius: 4px;
+  padding-left: 1px;
+}
+
+.single-offer.sell .arrow-tip {
+  right: -15px;
+  border-left: none;
+  border-bottom: none;
+  border-top-right-radius: 8px;
+}
+
+.single-offer:hover .data-container, .single-offer:hover .arrow-tip {
+  border-width: 2px;
+  border-color: blue;
+}
+
+.fs-tiny {
+  font-size: 10px;
+}
+
+.fs-regular {
+  font-size: 16px;
+}
+
+.fs-big {
+  font-size: 18px;
+}
+
+.fs-huge {
+  font-size: 22px;
+}
+
+.lh-fix {
+  line-height: 1;
+}
+
+.lh-huge {
+  line-height: 24px;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/** component__offer__price **/
+
+.bottom {
+  vertical-align: bottom;
+}
+
+.middle {
+  vertical-align: middle;
+}
+
+.top {
+  vertical-align: top;
+}
